@@ -11,7 +11,12 @@ function Phrase(content) {
 
   // Returns content processed for palinerome testing
   this.proccessedContent = function processedContent() {
-    return this.content.toLowerCase();
+    return this.letters().toLowerCase();
+  }
+
+  // Returns the letters in the content
+  this.letters = function letter() {
+    return (this.content.match(/[a-z]/gi) || []).join("");
   }
 
   // Returns true for a plaindrome, false otherwise
